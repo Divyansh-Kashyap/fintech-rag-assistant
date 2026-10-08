@@ -1,0 +1,164 @@
+[
+  {
+    "id": "EVAL-001",
+    "query": "What is the foreclosure charge if I close my personal loan in 18 months?",
+    "ground_truth_answer": "According to Section 4.2 of FinBase Personal Loans Master Policy & Operational Manual, because the loan is closed prior to completing 24 months, the applicable foreclosure charge is 3.0% of the outstanding principal balance plus 18% GST.",
+    "expected_document": "FinBase Personal Loans Master Policy & Operational Manual",
+    "expected_section": "Section 4.2",
+    "expected_page": 7,
+    "is_in_domain": true
+  },
+  {
+    "id": "EVAL-002",
+    "query": "What is the foreclosure charge if I close my personal loan after 26 months?",
+    "ground_truth_answer": "As per Section 4.2 of FinBase Personal Loans Master Policy, if the personal loan is foreclosed after completing 24 months, the applicable charge is 1.5% of the outstanding principal plus 18% GST.",
+    "expected_document": "FinBase Personal Loans Master Policy & Operational Manual",
+    "expected_section": "Section 4.2",
+    "expected_page": 7,
+    "is_in_domain": true
+  },
+  {
+    "id": "EVAL-003",
+    "query": "Can I close my personal loan within 3 months of getting it?",
+    "ground_truth_answer": "No. Under Section 4.2 of the FinBase Personal Loan Policy, full foreclosure is strictly not permitted within the initial 6 months from the date of loan disbursal.",
+    "expected_document": "FinBase Personal Loans Master Policy & Operational Manual",
+    "expected_section": "Section 4.2",
+    "expected_page": 7,
+    "is_in_domain": true
+  },
+  {
+    "id": "EVAL-004",
+    "query": "How much part-prepayment can I make without paying any fee?",
+    "ground_truth_answer": "Under Section 4.1, you can part-prepay up to 25% of the outstanding principal balance once per financial year with zero penalty, provided you have paid at least 6 consecutive EMIs.",
+    "expected_document": "FinBase Personal Loans Master Policy & Operational Manual",
+    "expected_section": "Section 4.1",
+    "expected_page": 6,
+    "is_in_domain": true
+  },
+  {
+    "id": "EVAL-005",
+    "query": "What happens if my monthly EMI bounces due to insufficient funds?",
+    "ground_truth_answer": "Under Section 5.2, an EMI bounce attracts a bounce charge of Rs 500 + GST, along with penal interest of 2% per month on the overdue EMI amount until paid.",
+    "expected_document": "FinBase Personal Loans Master Policy & Operational Manual",
+    "expected_section": "Section 5.2",
+    "expected_page": 8,
+    "is_in_domain": true
+  },
+  {
+    "id": "EVAL-006",
+    "query": "What is the minimum monthly income to qualify for a salaried personal loan?",
+    "ground_truth_answer": "Salaried applicants must have a minimum net monthly in-hand salary of Rs 25,000 credited directly to their bank account, as outlined in Section 2.2.",
+    "expected_document": "FinBase Personal Loans Master Policy & Operational Manual",
+    "expected_section": "Section 2.2",
+    "expected_page": 2,
+    "is_in_domain": true
+  },
+  {
+    "id": "EVAL-007",
+    "query": "What is the minimum credit score required by FinBase for personal loans?",
+    "ground_truth_answer": "A minimum bureau credit score (CIBIL or Experian) of 720 is required under Section 2.3.",
+    "expected_document": "FinBase Personal Loans Master Policy & Operational Manual",
+    "expected_section": "Section 2.3",
+    "expected_page": 3,
+    "is_in_domain": true
+  },
+  {
+    "id": "EVAL-008",
+    "query": "What is the auto-reversal TAT for failed UPI transactions and compensation for delay?",
+    "ground_truth_answer": "Under Section 1.1, failed UPI transactions must be automatically reversed within T+2 business days. If delayed beyond T+2, the bank compensates the customer Rs 100 per calendar day of delay.",
+    "expected_document": "FinBase Payments, UPI & Refund Settlement SOP",
+    "expected_section": "Section 1.1",
+    "expected_page": 2,
+    "is_in_domain": true
+  },
+  {
+    "id": "EVAL-009",
+    "query": "How can I get the annual fee waived on the FinBase Luxe Credit Card?",
+    "ground_truth_answer": "Under Section 1.2, the Rs 999 annual fee for the FinBase Luxe Credit Card is 100% waived if total annual card spend exceeds Rs 1,20,000 in the preceding membership year.",
+    "expected_document": "FinBase Credit Cards Comprehensive Handbook & Cardholder Agreement",
+    "expected_section": "Section 1.2",
+    "expected_page": 3,
+    "is_in_domain": true
+  },
+  {
+    "id": "EVAL-010",
+    "query": "What is the lounge access policy on the Luxe Credit Card?",
+    "ground_truth_answer": "Under Section 1.2, cardholders receive 4 complimentary domestic airport lounge visits per calendar year, strictly capped at 1 visit per calendar quarter.",
+    "expected_document": "FinBase Credit Cards Comprehensive Handbook & Cardholder Agreement",
+    "expected_section": "Section 1.2",
+    "expected_page": 3,
+    "is_in_domain": true
+  },
+  {
+    "id": "EVAL-011",
+    "query": "What is the foreign currency markup on the FinBase Edge Credit Card?",
+    "ground_truth_answer": "Under Section 1.1, foreign currency markup fee is 3.50% on all cross-border and foreign currency transactions.",
+    "expected_document": "FinBase Credit Cards Comprehensive Handbook & Cardholder Agreement",
+    "expected_section": "Section 1.1",
+    "expected_page": 2,
+    "is_in_domain": true
+  },
+  {
+    "id": "EVAL-012",
+    "query": "What additional interest rate do senior citizens get on Fixed Deposits?",
+    "ground_truth_answer": "Under Section 1.2, senior citizen depositors aged 60 years and above are entitled to an additional interest rate of 0.50% p.a. across all deposit tenures.",
+    "expected_document": "FinBase Fixed Deposits & Wealth Products Master Guidelines",
+    "expected_section": "Section 1.2",
+    "expected_page": 2,
+    "is_in_domain": true
+  },
+  {
+    "id": "EVAL-013",
+    "query": "What happens if a Fixed Deposit is closed prematurely within 7 days from booking?",
+    "ground_truth_answer": "Under Section 2.1 and RBI regulations, if a Fixed Deposit is closed prematurely within 7 days from the booking date, zero interest is payable.",
+    "expected_document": "FinBase Fixed Deposits & Wealth Products Master Guidelines",
+    "expected_section": "Section 2.1",
+    "expected_page": 3,
+    "is_in_domain": true
+  },
+  {
+    "id": "EVAL-014",
+    "query": "What is the minimum balance requirement for the FinBase Digital Savings Account?",
+    "ground_truth_answer": "Under Section 1.1, the FinBase Digital Savings Account is a zero-balance account with no Average Monthly Balance (AMB) requirement or non-maintenance penalties.",
+    "expected_document": "FinBase Digital Savings Accounts & Banking Operations Manual",
+    "expected_section": "Section 1.1",
+    "expected_page": 2,
+    "is_in_domain": true
+  },
+  {
+    "id": "EVAL-015",
+    "query": "Which documents are accepted as Officially Valid Documents for KYC?",
+    "ground_truth_answer": "Under Section 2.1, FinBase accepts 5 Officially Valid Documents: Aadhaar Card, PAN Card, Indian Passport, Driving License, and Voter ID Card.",
+    "expected_document": "FinBase KYC Verification, Compliance & Security Master Document",
+    "expected_section": "Section 2.1",
+    "expected_page": 2,
+    "is_in_domain": true
+  },
+  {
+    "id": "EVAL-016",
+    "query": "What is the warranty and return policy on an Apple MacBook Pro laptop?",
+    "ground_truth_answer": "Information not available in the knowledge base.",
+    "expected_document": null,
+    "expected_section": null,
+    "expected_page": null,
+    "is_in_domain": false
+  },
+  {
+    "id": "EVAL-017",
+    "query": "How do I book a bullet train Shinkansen ticket from Tokyo to Kyoto?",
+    "ground_truth_answer": "Information not available in the knowledge base.",
+    "expected_document": null,
+    "expected_section": null,
+    "expected_page": null,
+    "is_in_domain": false
+  },
+  {
+    "id": "EVAL-018",
+    "query": "What are the official rules and batting powerplay regulations in the Indian Premier League cricket tournament?",
+    "ground_truth_answer": "Information not available in the knowledge base.",
+    "expected_document": null,
+    "expected_section": null,
+    "expected_page": null,
+    "is_in_domain": false
+  }
+]

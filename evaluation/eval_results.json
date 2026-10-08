@@ -1,0 +1,323 @@
+{
+  "timestamp": 1791494801.2364511,
+  "total_test_cases": 18,
+  "in_domain_cases": 15,
+  "out_of_domain_cases": 3,
+  "overall_metrics": {
+    "mean_answer_correctness": 0.7984,
+    "mean_faithfulness_groundedness": 0.7744,
+    "mean_context_recall": 1.0,
+    "mean_context_precision": 1.0,
+    "mean_citation_accuracy": 1.0,
+    "negative_fallback_accuracy": 1.0,
+    "mean_latency_ms": 1.99
+  },
+  "query_results": [
+    {
+      "id": "EVAL-001",
+      "query": "What is the foreclosure charge if I close my personal loan in 18 months?",
+      "is_in_domain": true,
+      "generated_answer": "According to Section 4.2: Foreclosure Charges and Lock-in Period of FinBase Personal Loans Master Policy & Operational Manual, According to Section 4.2, because the loan is closed prior to completing 24 months, the applicable foreclosure charge is 3.0% of the outstanding principal balance plus 18% GST.",
+      "ground_truth_answer": "According to Section 4.2 of FinBase Personal Loans Master Policy & Operational Manual, because the loan is closed prior to completing 24 months, the applicable foreclosure charge is 3.0% of the outstanding principal balance plus 18% GST.",
+      "sources_count": 1,
+      "confidence_score": 0.98,
+      "latency_ms": 3.02,
+      "metrics": {
+        "answer_correctness": 0.959,
+        "faithfulness": 0.714,
+        "context_recall": 1.0,
+        "context_precision": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": "EVAL-002",
+      "query": "What is the foreclosure charge if I close my personal loan after 26 months?",
+      "is_in_domain": true,
+      "generated_answer": "According to Section 4.2: Foreclosure Charges and Lock-in Period of FinBase Personal Loans Master Policy & Operational Manual, As per Section 4.2, if the personal loan is foreclosed after completing 24 months, the applicable charge is 1.5% of the outstanding principal plus 18% GST.",
+      "ground_truth_answer": "As per Section 4.2 of FinBase Personal Loans Master Policy, if the personal loan is foreclosed after completing 24 months, the applicable charge is 1.5% of the outstanding principal plus 18% GST.",
+      "sources_count": 1,
+      "confidence_score": 0.98,
+      "latency_ms": 0.0,
+      "metrics": {
+        "answer_correctness": 0.916,
+        "faithfulness": 0.68,
+        "context_recall": 1.0,
+        "context_precision": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": "EVAL-003",
+      "query": "Can I close my personal loan within 3 months of getting it?",
+      "is_in_domain": true,
+      "generated_answer": "According to Section 4.2: Foreclosure Charges and Lock-in Period of FinBase Personal Loans Master Policy & Operational Manual, No. Under Section 4.2, full foreclosure is strictly not permitted within the initial 6 months lock-in period from the date of loan disbursal.",
+      "ground_truth_answer": "No. Under Section 4.2 of the FinBase Personal Loan Policy, full foreclosure is strictly not permitted within the initial 6 months from the date of loan disbursal.",
+      "sources_count": 1,
+      "confidence_score": 0.98,
+      "latency_ms": 0.52,
+      "metrics": {
+        "answer_correctness": 0.867,
+        "faithfulness": 0.786,
+        "context_recall": 1.0,
+        "context_precision": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": "EVAL-004",
+      "query": "How much part-prepayment can I make without paying any fee?",
+      "is_in_domain": true,
+      "generated_answer": "According to Section 4.1: Part-Prepayment Rules & Allowances of FinBase Personal Loans Master Policy & Operational Manual, Under Section 4.1, you can part-prepay up to 25% of the outstanding principal balance once per financial year with zero penalty, provided you have paid at least 6 consecutive EMIs.",
+      "ground_truth_answer": "Under Section 4.1, you can part-prepay up to 25% of the outstanding principal balance once per financial year with zero penalty, provided you have paid at least 6 consecutive EMIs.",
+      "sources_count": 1,
+      "confidence_score": 0.89,
+      "latency_ms": 0.0,
+      "metrics": {
+        "answer_correctness": 0.965,
+        "faithfulness": 0.75,
+        "context_recall": 1.0,
+        "context_precision": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": "EVAL-005",
+      "query": "What happens if my monthly EMI bounces due to insufficient funds?",
+      "is_in_domain": true,
+      "generated_answer": "According to Section 5.2: EMI Bounce Charges and Penal Interest of FinBase Personal Loans Master Policy & Operational Manual, Under Section 5.2, an EMI bounce attracts a bounce charge of Rs 500 + 18% GST, along with penal interest of 2.0% per month on the overdue amount until settled.",
+      "ground_truth_answer": "Under Section 5.2, an EMI bounce attracts a bounce charge of Rs 500 + GST, along with penal interest of 2% per month on the overdue EMI amount until paid.",
+      "sources_count": 1,
+      "confidence_score": 0.86,
+      "latency_ms": 6.87,
+      "metrics": {
+        "answer_correctness": 0.825,
+        "faithfulness": 0.786,
+        "context_recall": 1.0,
+        "context_precision": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": "EVAL-006",
+      "query": "What is the minimum monthly income to qualify for a salaried personal loan?",
+      "is_in_domain": true,
+      "generated_answer": "According to Section 2.2: Employment and Monthly Income Thresholds of FinBase Personal Loans Master Policy & Operational Manual, Salaried applicants must have a minimum net monthly in-hand salary of Rs 25,000 credited directly to their bank account via transfer, with at least 6 months at their current employer, under Section 2.2.",
+      "ground_truth_answer": "Salaried applicants must have a minimum net monthly in-hand salary of Rs 25,000 credited directly to their bank account, as outlined in Section 2.2.",
+      "sources_count": 1,
+      "confidence_score": 0.89,
+      "latency_ms": 2.51,
+      "metrics": {
+        "answer_correctness": 0.768,
+        "faithfulness": 0.771,
+        "context_recall": 1.0,
+        "context_precision": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": "EVAL-007",
+      "query": "What is the minimum credit score required by FinBase for personal loans?",
+      "is_in_domain": true,
+      "generated_answer": "According to Section 2.3: Credit Score & Bureau Verification of FinBase Personal Loans Master Policy & Operational Manual, Under Section 2.3, a minimum bureau credit score (CIBIL or Experian) of 720 is strictly required.",
+      "ground_truth_answer": "A minimum bureau credit score (CIBIL or Experian) of 720 is required under Section 2.3.",
+      "sources_count": 1,
+      "confidence_score": 0.89,
+      "latency_ms": 1.6,
+      "metrics": {
+        "answer_correctness": 0.84,
+        "faithfulness": 0.739,
+        "context_recall": 1.0,
+        "context_precision": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": "EVAL-008",
+      "query": "What is the auto-reversal TAT for failed UPI transactions and compensation for delay?",
+      "is_in_domain": true,
+      "generated_answer": "According to Section 1.1: Failed UPI Transactions & Auto-Reversal Turnaround Time of FinBase Payments, UPI & Refund Settlement SOP, Under Section 1.1, failed UPI transactions must be reversed within T+2 business days. If delayed beyond T+2, the bank pays compensation of Rs 100 per calendar day of delay directly into your account.",
+      "ground_truth_answer": "Under Section 1.1, failed UPI transactions must be automatically reversed within T+2 business days. If delayed beyond T+2, the bank compensates the customer Rs 100 per calendar day of delay.",
+      "sources_count": 1,
+      "confidence_score": 0.94,
+      "latency_ms": 0.0,
+      "metrics": {
+        "answer_correctness": 0.791,
+        "faithfulness": 0.781,
+        "context_recall": 1.0,
+        "context_precision": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": "EVAL-009",
+      "query": "How can I get the annual fee waived on the FinBase Luxe Credit Card?",
+      "is_in_domain": true,
+      "generated_answer": "According to Section 1.2: FinBase Luxe Credit Card & Lounge Access of FinBase Credit Cards Comprehensive Handbook & Cardholder Agreement, Under Section 1.2, the Rs 999 annual fee is 100% waived if you spend over Rs 1,20,000 in the preceding year. It includes 4 complimentary domestic lounge visits per year, capped at 1 visit per quarter.",
+      "ground_truth_answer": "Under Section 1.2, the Rs 999 annual fee for the FinBase Luxe Credit Card is 100% waived if total annual card spend exceeds Rs 1,20,000 in the preceding membership year.",
+      "sources_count": 1,
+      "confidence_score": 0.92,
+      "latency_ms": 0.0,
+      "metrics": {
+        "answer_correctness": 0.705,
+        "faithfulness": 0.688,
+        "context_recall": 1.0,
+        "context_precision": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": "EVAL-010",
+      "query": "What is the lounge access policy on the Luxe Credit Card?",
+      "is_in_domain": true,
+      "generated_answer": "According to Section 1.2: FinBase Luxe Credit Card & Lounge Access of FinBase Credit Cards Comprehensive Handbook & Cardholder Agreement, Under Section 1.2, the Rs 999 annual fee is 100% waived if you spend over Rs 1,20,000 in the preceding year. It includes 4 complimentary domestic lounge visits per year, capped at 1 visit per quarter.",
+      "ground_truth_answer": "Under Section 1.2, cardholders receive 4 complimentary domestic airport lounge visits per calendar year, strictly capped at 1 visit per calendar quarter.",
+      "sources_count": 1,
+      "confidence_score": 0.98,
+      "latency_ms": 9.28,
+      "metrics": {
+        "answer_correctness": 0.57,
+        "faithfulness": 0.688,
+        "context_recall": 1.0,
+        "context_precision": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": "EVAL-011",
+      "query": "What is the foreign currency markup on the FinBase Edge Credit Card?",
+      "is_in_domain": true,
+      "generated_answer": "According to Section 1.1: FinBase Edge Credit Card Features & Charges of FinBase Credit Cards Comprehensive Handbook & Cardholder Agreement, Under Section 1.1, the FinBase Edge Credit Card has zero annual fee for life, and a foreign currency markup of 3.50% on all international transactions.",
+      "ground_truth_answer": "Under Section 1.1, foreign currency markup fee is 3.50% on all cross-border and foreign currency transactions.",
+      "sources_count": 1,
+      "confidence_score": 0.94,
+      "latency_ms": 0.0,
+      "metrics": {
+        "answer_correctness": 0.6,
+        "faithfulness": 0.759,
+        "context_recall": 1.0,
+        "context_precision": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": "EVAL-012",
+      "query": "What additional interest rate do senior citizens get on Fixed Deposits?",
+      "is_in_domain": true,
+      "generated_answer": "According to Section 1.2: Fixed Deposit Rates and Senior Citizen Benefit of FinBase Fixed Deposits & Wealth Products Master Guidelines, Under Section 1.2, senior citizen depositors aged 60 and above receive an additional interest rate bonus of 0.50% p.a. across all tenure slabs.",
+      "ground_truth_answer": "Under Section 1.2, senior citizen depositors aged 60 years and above are entitled to an additional interest rate of 0.50% p.a. across all deposit tenures.",
+      "sources_count": 1,
+      "confidence_score": 0.89,
+      "latency_ms": 5.2,
+      "metrics": {
+        "answer_correctness": 0.849,
+        "faithfulness": 0.7,
+        "context_recall": 1.0,
+        "context_precision": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": "EVAL-013",
+      "query": "What happens if a Fixed Deposit is closed prematurely within 7 days from booking?",
+      "is_in_domain": true,
+      "generated_answer": "According to Section 2: Premature Liquidation and Penalties (FinBase Fixed Deposits & Wealth Products Master Guidelines), \u2022 7-Day Minimum Holding Rule: If a Fixed Deposit is closed prematurely within 7 days from the booking date, **zero interest** is payable\nunder RBI regulations.\nSection 3: Tax Deducted at Source (TDS) & Form 15G / 15H\n \u2022 TDS Threshold: TDS is deducted at 10% if the total annual interest income across all deposits exceeds Rs 40,000 in a financial year\n(Rs 50,000 for senior citizens).\n\u2022 Non-PAN",
+      "ground_truth_answer": "Under Section 2.1 and RBI regulations, if a Fixed Deposit is closed prematurely within 7 days from the booking date, zero interest is payable.",
+      "sources_count": 2,
+      "confidence_score": 0.95,
+      "latency_ms": 2.56,
+      "metrics": {
+        "answer_correctness": 0.426,
+        "faithfulness": 0.587,
+        "context_recall": 1.0,
+        "context_precision": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": "EVAL-014",
+      "query": "What is the minimum balance requirement for the FinBase Digital Savings Account?",
+      "is_in_domain": true,
+      "generated_answer": "According to Section 1.1: Savings Account Interest Slabs and Minimum Balance of FinBase Digital Savings Accounts & Banking Operations Manual, Under Section 1.1, FinBase Digital Savings Account requires zero minimum balance (no non-maintenance charges). Interest is 3.50% p.a. up to Rs 1 Lakh and 6.00% p.a. from Rs 1 Lakh to Rs 10 Lakhs.",
+      "ground_truth_answer": "Under Section 1.1, the FinBase Digital Savings Account is a zero-balance account with no Average Monthly Balance (AMB) requirement or non-maintenance penalties.",
+      "sources_count": 1,
+      "confidence_score": 0.92,
+      "latency_ms": 2.66,
+      "metrics": {
+        "answer_correctness": 0.529,
+        "faithfulness": 0.844,
+        "context_recall": 1.0,
+        "context_precision": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": "EVAL-015",
+      "query": "Which documents are accepted as Officially Valid Documents for KYC?",
+      "is_in_domain": true,
+      "generated_answer": "According to Section 2.1: Officially Valid Documents (OVD) Accepted of FinBase KYC Verification, Compliance & Security Master Document, Under Section 2.1, FinBase accepts Aadhaar Card, PAN Card, Passport, Driving License, and Voter ID. PAN is mandatory for credit cards and loans.",
+      "ground_truth_answer": "Under Section 2.1, FinBase accepts 5 Officially Valid Documents: Aadhaar Card, PAN Card, Indian Passport, Driving License, and Voter ID Card.",
+      "sources_count": 1,
+      "confidence_score": 0.95,
+      "latency_ms": 0.0,
+      "metrics": {
+        "answer_correctness": 0.762,
+        "faithfulness": 0.667,
+        "context_recall": 1.0,
+        "context_precision": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": "EVAL-016",
+      "query": "What is the warranty and return policy on an Apple MacBook Pro laptop?",
+      "is_in_domain": false,
+      "generated_answer": "Information not available in the knowledge base.",
+      "ground_truth_answer": "Information not available in the knowledge base.",
+      "sources_count": 0,
+      "confidence_score": 0.0,
+      "latency_ms": 0.0,
+      "metrics": {
+        "answer_correctness": 1.0,
+        "faithfulness": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": "EVAL-017",
+      "query": "How do I book a bullet train Shinkansen ticket from Tokyo to Kyoto?",
+      "is_in_domain": false,
+      "generated_answer": "Information not available in the knowledge base.",
+      "ground_truth_answer": "Information not available in the knowledge base.",
+      "sources_count": 0,
+      "confidence_score": 0.0,
+      "latency_ms": 0.0,
+      "metrics": {
+        "answer_correctness": 1.0,
+        "faithfulness": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": "EVAL-018",
+      "query": "What are the official rules and batting powerplay regulations in the Indian Premier League cricket tournament?",
+      "is_in_domain": false,
+      "generated_answer": "Information not available in the knowledge base.",
+      "ground_truth_answer": "Information not available in the knowledge base.",
+      "sources_count": 0,
+      "confidence_score": 0.0,
+      "latency_ms": 1.67,
+      "metrics": {
+        "answer_correctness": 1.0,
+        "faithfulness": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 1.0,
+        "citation_accuracy": 1.0
+      }
+    }
+  ]
+}

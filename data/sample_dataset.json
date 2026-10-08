@@ -1,0 +1,255 @@
+{
+  "version": "2026.1",
+  "organization": "FinBase Technologies Inc.",
+  "knowledge_base": "FinBase Comprehensive Financial Products & Operations Manual",
+  "documents": [
+    {
+      "doc_id": "FB-POL-PL-2026-V4",
+      "doc_title": "FinBase Personal Loans Master Policy & Operational Manual",
+      "category": "Lending & Credit",
+      "effective_date": "2026-10-01",
+      "sections": [
+        {
+          "section_id": "PL-SEC-2.1",
+          "heading": "Section 2.1: Borrower Eligibility & Age Limits",
+          "page_no": 2,
+          "content": "Applicants must be Indian citizens residing within Indian territorial boundaries at the time of application. Minimum Age: 21 years completed at the date of loan application submission. Maximum Age: 58 years at loan application (or 60 years at scheduled loan maturity date, whichever is earlier). Borrowers outside this age bracket are strictly ineligible.",
+          "qa_pairs": [
+            {
+              "question": "What is the minimum and maximum age requirement to apply for a FinBase personal loan?",
+              "answer": "Under Section 2.1 of the Personal Loan Policy, applicants must be at least 21 years old at application and no more than 58 years old (or 60 years at the scheduled loan maturity date)."
+            }
+          ]
+        },
+        {
+          "section_id": "PL-SEC-2.2",
+          "heading": "Section 2.2: Employment and Monthly Income Thresholds",
+          "page_no": 2,
+          "content": "Salaried Individuals: Minimum net monthly in-hand salary of Rs 25,000 credited directly via bank transfer (IMPS/NEFT/RTGS). Cash or bearer cheque salary disbursements are strictly inadmissible. Minimum continuous employment of 6 months with the current employer, and minimum 12 months total verifiable work experience.",
+          "qa_pairs": [
+            {
+              "question": "What is the minimum monthly income to qualify for a salaried personal loan?",
+              "answer": "Salaried applicants must have a minimum net monthly in-hand salary of Rs 25,000 credited directly to their bank account via transfer, with at least 6 months at their current employer, under Section 2.2."
+            }
+          ]
+        },
+        {
+          "section_id": "PL-SEC-2.3",
+          "heading": "Section 2.3: Credit Score & Bureau Verification",
+          "page_no": 3,
+          "content": "A minimum bureau credit score (CIBIL or Experian) of 720 is required under Section 2.3. Applicants with scores below 720 or with DPD (Days Past Due) greater than 30 days within the past 12 months are subject to automated system decline.",
+          "qa_pairs": [
+            {
+              "question": "What is the minimum credit score required by FinBase for personal loans?",
+              "answer": "Under Section 2.3, a minimum bureau credit score (CIBIL or Experian) of 720 is strictly required."
+            }
+          ]
+        },
+        {
+          "section_id": "PL-SEC-3.1",
+          "heading": "Section 3.1: Loan Amount Slabs & Repayment Tenures",
+          "page_no": 4,
+          "content": "FinBase offers personal loan amounts ranging from Rs 50,000 up to a maximum sanction of Rs 15,00,000 (15 Lakhs). Repayment tenure options available are 12, 24, 36, 48, and 60 months. Tenures exceeding 60 months are not offered for unsecured retail loans.",
+          "qa_pairs": [
+            {
+              "question": "What is the maximum personal loan amount and what tenures are offered?",
+              "answer": "Under Section 3.1, the maximum personal loan amount is Rs 15,00,000 (15 Lakhs), and the available repayment tenures are 12, 24, 36, 48, and 60 months."
+            }
+          ]
+        },
+        {
+          "section_id": "PL-SEC-4.1",
+          "heading": "Section 4.1: Part-Prepayment Rules & Allowances",
+          "page_no": 6,
+          "content": "Under Section 4.1, borrowers are permitted to part-prepay up to 25% of the outstanding principal balance once per financial year with zero prepayment penalty, provided that at least 6 consecutive monthly EMIs have been successfully paid. Any part-prepayment exceeding 25% in a single financial year attracts a fee of 1.0% plus GST on the excess amount.",
+          "qa_pairs": [
+            {
+              "question": "How much part-prepayment can I make without paying any fee?",
+              "answer": "Under Section 4.1, you can part-prepay up to 25% of the outstanding principal balance once per financial year with zero penalty, provided you have paid at least 6 consecutive EMIs."
+            }
+          ]
+        },
+        {
+          "section_id": "PL-SEC-4.2",
+          "heading": "Section 4.2: Foreclosure Charges and Lock-in Period",
+          "page_no": 7,
+          "content": "Foreclosure Policy & Schedule: 1. Lock-in Period: Full foreclosure is strictly prohibited within the initial 6 months from loan disbursal. 2. Foreclosure prior to 24 months: If the loan is closed between 6 and 24 months, the foreclosure charge is 3.0% of the outstanding principal balance plus 18% GST. 3. Foreclosure after 24 months: If closed after completing 24 months, the charge is reduced to 1.5% of the outstanding principal plus 18% GST. Digital NOC is issued within 3 business days post settlement.",
+          "qa_pairs": [
+            {
+              "question": "What is the foreclosure charge if I close my personal loan in 18 months?",
+              "answer": "According to Section 4.2, because the loan is closed prior to completing 24 months, the applicable foreclosure charge is 3.0% of the outstanding principal balance plus 18% GST."
+            },
+            {
+              "question": "What is the foreclosure charge if I close my personal loan after 26 months?",
+              "answer": "As per Section 4.2, if the personal loan is foreclosed after completing 24 months, the applicable charge is 1.5% of the outstanding principal plus 18% GST."
+            },
+            {
+              "question": "Can I close my personal loan within 3 months of getting it?",
+              "answer": "No. Under Section 4.2, full foreclosure is strictly not permitted within the initial 6 months lock-in period from the date of loan disbursal."
+            }
+          ]
+        },
+        {
+          "section_id": "PL-SEC-5.2",
+          "heading": "Section 5.2: EMI Bounce Charges and Penal Interest",
+          "page_no": 8,
+          "content": "All repayments are debited via automated electronic mandate (NACH / e-NACH / UPI AutoPay) on the 5th of each month. If an EMI transaction bounces or fails due to insufficient funds, a mandate bounce charge of Rs 500 plus 18% GST is levied immediately, along with penal interest of 2.0% per month on the unpaid overdue installment until cleared.",
+          "qa_pairs": [
+            {
+              "question": "What happens if my monthly EMI bounces due to insufficient funds?",
+              "answer": "Under Section 5.2, an EMI bounce attracts a bounce charge of Rs 500 + 18% GST, along with penal interest of 2.0% per month on the overdue amount until settled."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "doc_id": "FB-POL-CC-2026-V5",
+      "doc_title": "FinBase Credit Cards Comprehensive Handbook & Cardholder Agreement",
+      "category": "Cards & Payments",
+      "effective_date": "2026-10-01",
+      "sections": [
+        {
+          "section_id": "CC-SEC-1.1",
+          "heading": "Section 1.1: FinBase Edge Credit Card Features & Charges",
+          "page_no": 2,
+          "content": "The FinBase Edge Credit Card has zero joining fee and zero annual fee for life. Foreign currency markup fee is 3.50% on all cross-border transactions. Cash advance transaction fee is 2.5% of the withdrawn amount or Rs 500, whichever is higher, with finance charges accruing immediately from withdrawal date.",
+          "qa_pairs": [
+            {
+              "question": "What is the annual fee and foreign currency markup on the FinBase Edge Credit Card?",
+              "answer": "Under Section 1.1, the FinBase Edge Credit Card has zero annual fee for life, and a foreign currency markup of 3.50% on all international transactions."
+            }
+          ]
+        },
+        {
+          "section_id": "CC-SEC-1.2",
+          "heading": "Section 1.2: FinBase Luxe Credit Card & Lounge Access",
+          "page_no": 3,
+          "content": "FinBase Luxe Credit Card: Joining & Annual Fee is Rs 999 + 18% GST. The annual fee for subsequent years is 100% waived if total retail spend exceeds Rs 1,20,000 in the preceding membership year. Cardholders receive 4 complimentary domestic airport lounge visits per calendar year (strictly capped at 1 visit per calendar quarter).",
+          "qa_pairs": [
+            {
+              "question": "How can I get the annual fee waived on the FinBase Luxe Credit Card and what is the lounge access policy?",
+              "answer": "Under Section 1.2, the Rs 999 annual fee is 100% waived if you spend over Rs 1,20,000 in the preceding year. It includes 4 complimentary domestic lounge visits per year, capped at 1 visit per quarter."
+            }
+          ]
+        },
+        {
+          "section_id": "CC-SEC-2.1",
+          "heading": "Section 2.1: Grace Period and Finance Charges",
+          "page_no": 5,
+          "content": "Cardholders enjoy an interest-free credit grace period ranging from 20 to 50 days depending on the transaction date relative to the statement billing cycle. If the Total Amount Due is not paid on or before the Payment Due Date, finance charges of 3.65% per month (43.8% p.a.) are calculated on average daily balance from transaction dates.",
+          "qa_pairs": [
+            {
+              "question": "What is the interest rate or finance charge if I don't pay my credit card bill in full?",
+              "answer": "Under Section 2.1, revolving credit incurs finance charges of 3.65% per month (43.8% APR) calculated on the average daily balance from the original transaction dates."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "doc_id": "FB-SOP-PAY-2026-V4",
+      "doc_title": "FinBase Payments, UPI & Refund Settlement SOP",
+      "category": "Payments & Compliance",
+      "effective_date": "2026-10-01",
+      "sections": [
+        {
+          "section_id": "PAY-SEC-1.1",
+          "heading": "Section 1.1: Failed UPI Transactions & Auto-Reversal Turnaround Time",
+          "page_no": 2,
+          "content": "When money is debited from a customer account but the beneficiary is not credited due to technical decline: Under RBI Harmonization of TAT guidelines, failed transactions must be automatically reversed within T+2 business days (where T is transaction date). If the reversal exceeds T+2 business days, FinBase compensates the customer Rs 100 per calendar day of delay, credited automatically.",
+          "qa_pairs": [
+            {
+              "question": "What is the auto-reversal TAT for failed UPI transactions and compensation for delay?",
+              "answer": "Under Section 1.1, failed UPI transactions must be reversed within T+2 business days. If delayed beyond T+2, the bank pays compensation of Rs 100 per calendar day of delay directly into your account."
+            }
+          ]
+        },
+        {
+          "section_id": "PAY-SEC-2.1",
+          "heading": "Section 2.1: Chargeback Filing and Dispute Resolution",
+          "page_no": 4,
+          "content": "Customers can initiate a dispute or chargeback within 60 calendar days from the transaction date via the FinBase App. For unauthorized transactions reported within 3 days, provisional credit is provided within 10 working days pending final investigation under RBI customer protection directives.",
+          "qa_pairs": [
+            {
+              "question": "Within how many days can I raise a chargeback or payment dispute?",
+              "answer": "Under Section 2.1, chargebacks must be raised within 60 calendar days of the transaction date. Unauthorized debits reported within 3 days receive provisional credit within 10 working days."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "doc_id": "FB-POL-FDW-2026-V3",
+      "doc_title": "FinBase Fixed Deposits & Wealth Products Master Guidelines",
+      "category": "Deposits & Wealth",
+      "effective_date": "2026-10-01",
+      "sections": [
+        {
+          "section_id": "FD-SEC-1.2",
+          "heading": "Section 1.2: Fixed Deposit Rates and Senior Citizen Benefit",
+          "page_no": 2,
+          "content": "Regular Fixed Deposit tenures range from 7 days to 10 years. Standard annual interest rates range from 4.00% p.a. to 7.25% p.a. Senior citizen depositors aged 60 years and above receive an additional interest rate bonus of 0.50% p.a. across all deposit tenures.",
+          "qa_pairs": [
+            {
+              "question": "What additional interest rate do senior citizens get on Fixed Deposits?",
+              "answer": "Under Section 1.2, senior citizen depositors aged 60 and above receive an additional interest rate bonus of 0.50% p.a. across all tenure slabs."
+            }
+          ]
+        },
+        {
+          "section_id": "FD-SEC-2.1",
+          "heading": "Section 2.1: Premature Liquidation and Penalties",
+          "page_no": 3,
+          "content": "Premature withdrawal of Fixed Deposits is permitted via the mobile app. A penalty of 1.00% is deducted from the contracted interest rate applicable for the period the FD was held. Under Section 2.1 and RBI rules, if an FD is liquidated prematurely within 7 days from the booking date, zero interest is payable.",
+          "qa_pairs": [
+            {
+              "question": "What is the penalty for premature withdrawal of a Fixed Deposit?",
+              "answer": "Under Section 2.1, premature withdrawal incurs a 1.00% penalty deduction from the applicable contracted rate. If withdrawn within the first 7 days, zero interest is paid."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "doc_id": "FB-POL-SAV-2026-V3",
+      "doc_title": "FinBase Digital Savings Accounts & Banking Operations Manual",
+      "category": "Retail Banking",
+      "effective_date": "2026-10-01",
+      "sections": [
+        {
+          "section_id": "SAV-SEC-1.1",
+          "heading": "Section 1.1: Savings Account Interest Slabs and Minimum Balance",
+          "page_no": 2,
+          "content": "FinBase Digital Savings Account is a zero-balance account with no Average Monthly Balance (AMB) requirement or non-maintenance penalties. Interest is calculated on daily end-of-day ledger balance and credited quarterly: 3.50% p.a. on balances up to Rs 1,00,000, and 6.00% p.a. on incremental balances between Rs 1,00,000 and Rs 10,00,000.",
+          "qa_pairs": [
+            {
+              "question": "What is the minimum balance requirement and interest rate for a FinBase Savings Account?",
+              "answer": "Under Section 1.1, FinBase Digital Savings Account requires zero minimum balance (no non-maintenance charges). Interest is 3.50% p.a. up to Rs 1 Lakh and 6.00% p.a. from Rs 1 Lakh to Rs 10 Lakhs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "doc_id": "FB-POL-KYC-SEC-2026-V5",
+      "doc_title": "FinBase KYC Verification, Compliance & Security Master Document",
+      "category": "Compliance & Security",
+      "effective_date": "2026-10-01",
+      "sections": [
+        {
+          "section_id": "KYC-SEC-2.1",
+          "heading": "Section 2.1: Officially Valid Documents (OVD) Accepted",
+          "page_no": 2,
+          "content": "In accordance with RBI Master Directions, FinBase accepts 5 Officially Valid Documents: 1. Aadhaar Card (via DigiLocker or masked paper copy), 2. PAN Card (mandatory for credit, personal loans, and deposits exceeding Rs 50,000), 3. Valid Indian Passport, 4. Driving License, 5. Voter ID Card. Ration card is strictly not accepted as proof of identity.",
+          "qa_pairs": [
+            {
+              "question": "Which documents are accepted as Officially Valid Documents for KYC?",
+              "answer": "Under Section 2.1, FinBase accepts Aadhaar Card, PAN Card, Passport, Driving License, and Voter ID. PAN is mandatory for credit cards and loans."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
