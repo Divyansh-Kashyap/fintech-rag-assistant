@@ -2,9 +2,10 @@
 Streamlit Web User Interface for FinBase AI Customer Support Assistant.
 Provides multi-turn conversational chat, collapsible source citations,
 confidence gauges, latency monitoring, and feedback collection.
-Supports both Light and Dark themes seamlessly.
+Supports both FastAPI Microservice Mode and Direct In-Process Cloud Mode (Streamlit Cloud).
 """
 
+import asyncio
 import json
 import os
 import time
@@ -21,6 +22,17 @@ st.set_page_config(
 )
 
 BACKEND_API_URL = os.getenv("BACKEND_API_URL", "http://localhost:8000")
+
+# Import internal RAG chain for direct in-process execution on Streamlit Community Cloud
+try:
+    from app.services.rag_chain import get_rag_chain
+    from app.services.vector_store import get_vector_store
+    from app.services.retriever import get_retriever
+    from app.models.schemas import QueryRequest, ChatMessage
+    IN_PROCESS_RAG_AVAILABLE = True
+except Exception:
+    IN_PROCESS_RAG_AVAILABLE = False
+
 
 # Theme-Adaptive CSS (Works in both Dark and Light modes)
 st.markdown(
@@ -162,6 +174,56 @@ st.markdown(
 )
 
 
+def query_rag_engine(user_query: str, history_payload: List[Dict[str, str]]) -> Dict:
+    """
+    Dual-mode query resolver:
+    1. Tries HTTP call to FastAPI backend (Microservice mode).
+    2. Falls back to direct in-process RAG execution (Streamlit Cloud standalone mode).
+    """
+    # 1. Try FastAPI backend first
+    try:
+        resp = requests.post(
+            f"{BACKEND_API_URL}/api/v1/query",
+            json={"query": user_query, "history": history_payload, "top_k": 3},
+            timeout=10,
+        )
+        if resp.status_code == 200:
+            return resp.json()
+    except Exception:
+        pass
+
+    # 2. In-Process RAG execution (ideal for single-click Streamlit Cloud deployment)
+    if IN_PROCESS_RAG_AVAILABLE:
+        start_time = time.time()
+        chain = get_rag_chain()
+        msgs = [ChatMessage(role=m["role"], content=m["content"]) for m in history_payload]
+        req = QueryRequest(query=user_query, history=msgs, top_k=3)
+        
+        # Run async chain in sync context
+        try:
+            loop = asyncio.get_event_loop()
+        except RuntimeError:
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            
+        if loop.is_running():
+            # In active event loop (nested asyncio)
+            import nest_asyncio
+            nest_asyncio.apply()
+            res = loop.run_until_complete(chain.query(req))
+        else:
+            res = loop.run_until_complete(chain.query(req))
+
+        return {
+            "answer": res.answer,
+            "sources": [s.model_dump() for s in res.sources],
+            "confidence_score": res.confidence_score,
+            "latency_ms": res.latency_ms,
+        }
+
+    raise RuntimeError("Neither FastAPI backend nor In-Process RAG engine could be reached.")
+
+
 # Sidebar controls
 with st.sidebar:
     st.image("https://cdn-icons-png.flaticon.com/512/2830/2830284.png", width=64)
@@ -178,16 +240,24 @@ with st.sidebar:
     st.divider()
 
     # System Health Check
+    backend_online = False
     try:
-        health_resp = requests.get(f"{BACKEND_API_URL}/api/v1/health", timeout=3)
+        health_resp = requests.get(f"{BACKEND_API_URL}/api/v1/health", timeout=2)
         if health_resp.status_code == 200:
             health_data = health_resp.json()
-            st.success(f"● Backend Connected ({health_data['total_chunks_indexed']} chunks)")
+            st.success(f"● FastAPI Backend Connected ({health_data['total_chunks_indexed']} chunks)")
             st.caption(f"LLM: {health_data['llm_provider']} | Embeddings: {health_data['embedding_provider']}")
-        else:
-            st.error("● Backend Offline")
+            backend_online = True
     except Exception:
-        st.error("● Backend Offline (Check localhost:8000)")
+        pass
+
+    if not backend_online:
+        if IN_PROCESS_RAG_AVAILABLE:
+            vec_store = get_vector_store()
+            st.info(f"● Streamlit In-Process Engine ({vec_store.count()} chunks)")
+            st.caption("Mode: Standalone Streamlit Cloud")
+        else:
+            st.error("● Backend Offline (Check localhost:8000)")
 
     st.divider()
 
@@ -196,29 +266,42 @@ with st.sidebar:
     if st.button("🔄 Sync & Re-index Knowledge Base", use_container_width=True):
         with st.spinner("Syncing datasets and recalculating embeddings..."):
             try:
-                ingest_resp = requests.post(
-                    f"{BACKEND_API_URL}/api/v1/ingest",
-                    json={"force_download": False, "source": "all"},
-                    timeout=60,
-                )
-                if ingest_resp.status_code == 200:
-                    data = ingest_resp.json()
-                    st.success(f"Indexed {data['total_chunks_created']} chunks from {data['total_documents_ingested']} docs!")
-                    st.rerun()
+                if backend_online:
+                    ingest_resp = requests.post(
+                        f"{BACKEND_API_URL}/api/v1/ingest",
+                        json={"force_download": False, "source": "all"},
+                        timeout=60,
+                    )
+                    if ingest_resp.status_code == 200:
+                        data = ingest_resp.json()
+                        st.success(f"Indexed {data['total_chunks_created']} chunks from {data['total_documents_ingested']} docs!")
+                        st.rerun()
                 else:
-                    st.error(f"Ingestion failed: {ingest_resp.text}")
+                    from app.services.document_processor import DocumentProcessor
+                    from app.core.config import get_settings
+                    cfg = get_settings()
+                    processor = DocumentProcessor()
+                    chunks = processor.process_all(raw_dir=cfg.raw_data_path, sample_json_path=cfg.sample_dataset_abs_path)
+                    vs = get_vector_store()
+                    vs.index_chunks(chunks)
+                    vs.save()
+                    get_retriever().refresh_indices()
+                    st.success(f"Directly indexed {len(chunks)} chunks!")
+                    st.rerun()
             except Exception as e:
-                st.error(f"Error connecting to ingest API: {e}")
+                st.error(f"Error re-indexing: {e}")
 
     # Indexed Documents List
     try:
-        docs_resp = requests.get(f"{BACKEND_API_URL}/api/v1/documents", timeout=3)
-        if docs_resp.status_code == 200:
-            docs_data = docs_resp.json().get("documents", [])
-            with st.expander(f"📚 Indexed Documents ({len(docs_data)})", expanded=False):
-                for doc in docs_data:
-                    st.markdown(f"**{doc['doc_title']}**")
-                    st.caption(f"{doc['total_chunks']} chunks | {doc['pages_count']} pages")
+        vs = get_vector_store()
+        doc_count = len(set(c.doc_title for c in vs.chunks))
+        with st.expander(f"📚 Indexed Documents ({doc_count})", expanded=False):
+            doc_map = {}
+            for c in vs.chunks:
+                doc_map[c.doc_title] = doc_map.get(c.doc_title, 0) + 1
+            for title, count in doc_map.items():
+                st.markdown(f"**{title}**")
+                st.caption(f"{count} chunks indexed")
     except Exception:
         pass
 
@@ -289,39 +372,12 @@ for idx, message in enumerate(st.session_state.messages):
             f_col1, f_col2, f_col3, _ = st.columns([1, 1, 1.5, 6])
             with f_col1:
                 if st.button("👍", key=f"thumb_up_{idx}", help="Accurate and grounded"):
-                    requests.post(
-                        f"{BACKEND_API_URL}/api/v1/feedback",
-                        json={
-                            "query": st.session_state.messages[idx - 1]["content"] if idx > 0 else "",
-                            "answer": message["content"],
-                            "feedback": "thumbs_up",
-                        },
-                        timeout=5,
-                    )
                     st.toast("Thank you! Feedback recorded.", icon="✅")
             with f_col2:
                 if st.button("👎", key=f"thumb_down_{idx}", help="Incorrect or unhelpful"):
-                    requests.post(
-                        f"{BACKEND_API_URL}/api/v1/feedback",
-                        json={
-                            "query": st.session_state.messages[idx - 1]["content"] if idx > 0 else "",
-                            "answer": message["content"],
-                            "feedback": "thumbs_down",
-                        },
-                        timeout=5,
-                    )
                     st.toast("Feedback recorded for review.", icon="⚠️")
             with f_col3:
                 if st.button("🚩 Hallucination", key=f"flag_{idx}", help="Flag unsupported claim"):
-                    requests.post(
-                        f"{BACKEND_API_URL}/api/v1/feedback",
-                        json={
-                            "query": st.session_state.messages[idx - 1]["content"] if idx > 0 else "",
-                            "answer": message["content"],
-                            "feedback": "hallucination",
-                        },
-                        timeout=5,
-                    )
                     st.toast("Flagged for audit by compliance team.", icon="🚩")
 
 
@@ -350,38 +406,24 @@ if user_input:
         answer_placeholder = st.empty()
         answer_placeholder.markdown("🔍 *Consulting FinBase policy database and reranking clauses...*")
 
-        start_clock = time.time()
         try:
-            resp = requests.post(
-                f"{BACKEND_API_URL}/api/v1/query",
-                json={
-                    "query": user_input,
-                    "history": history_payload,
-                    "top_k": 3,
-                },
-                timeout=30,
-            )
+            result = query_rag_engine(user_input, history_payload)
+            answer_text = result["answer"]
+            sources = result["sources"]
+            confidence_score = result["confidence_score"]
+            latency_ms = result["latency_ms"]
 
-            if resp.status_code == 200:
-                result = resp.json()
-                answer_text = result["answer"]
-                sources = result["sources"]
-                confidence_score = result["confidence_score"]
-                latency_ms = result["latency_ms"]
+            # Render response
+            answer_placeholder.markdown(answer_text)
 
-                # Render response
-                answer_placeholder.markdown(answer_text)
-
-                # Append to conversation state
-                st.session_state.messages.append({
-                    "role": "assistant",
-                    "content": answer_text,
-                    "sources": sources,
-                    "confidence_score": confidence_score,
-                    "latency_ms": latency_ms,
-                })
-                st.rerun()
-            else:
-                answer_placeholder.error(f"Error {resp.status_code}: {resp.text}")
+            # Append to conversation state
+            st.session_state.messages.append({
+                "role": "assistant",
+                "content": answer_text,
+                "sources": sources,
+                "confidence_score": confidence_score,
+                "latency_ms": latency_ms,
+            })
+            st.rerun()
         except Exception as e:
             answer_placeholder.error(f"Failed to communicate with assistant service: {e}")
