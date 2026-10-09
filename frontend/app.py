@@ -263,7 +263,7 @@ with st.sidebar:
 
     # Knowledge Base Re-Ingestion Button
     st.subheader("Knowledge Base Sync")
-    if st.button("🔄 Sync & Re-index Knowledge Base", use_container_width=True):
+    if st.button("🔄 Sync & Re-index Knowledge Base", key="sync_kb", use_container_width=True):
         with st.spinner("Syncing datasets and recalculating embeddings..."):
             try:
                 if backend_online:
@@ -306,7 +306,7 @@ with st.sidebar:
         pass
 
     st.divider()
-    if st.button("🧹 Clear Chat History", use_container_width=True):
+    if st.button("🧹 Clear Chat History", key="clear_chat", use_container_width=True):
         st.session_state.messages = []
         init_session_state()
         st.rerun()
@@ -316,16 +316,16 @@ with st.sidebar:
 st.markdown("**Sample Customer Questions:**")
 col1, col2, col3, col4 = st.columns(4)
 with col1:
-    if st.button("What is the foreclosure charge at 18 months?", use_container_width=True):
+    if st.button("What is the foreclosure charge at 18 months?", key="quick_q1", use_container_width=True):
         st.session_state.quick_query = "What is the foreclosure charge if I close my personal loan in 18 months?"
 with col2:
-    if st.button("Foreclosure charge after 26 months?", use_container_width=True):
+    if st.button("Foreclosure charge after 26 months?", key="quick_q2", use_container_width=True):
         st.session_state.quick_query = "What is the foreclosure charge if I close my personal loan after 26 months?"
 with col3:
-    if st.button("UPI failed auto-reversal TAT & delay fee?", use_container_width=True):
+    if st.button("UPI failed auto-reversal TAT & delay fee?", key="quick_q3", use_container_width=True):
         st.session_state.quick_query = "What is the auto-reversal TAT for failed UPI transactions and what is the delay compensation?"
 with col4:
-    if st.button("Luxe card annual fee waiver & lounge?", use_container_width=True):
+    if st.button("Luxe card annual fee waiver & lounge?", key="quick_q4", use_container_width=True):
         st.session_state.quick_query = "How can I get the annual fee waived on the FinBase Luxe Credit Card and what is the lounge access policy?"
 
 
