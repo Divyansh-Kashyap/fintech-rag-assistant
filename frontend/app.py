@@ -8,8 +8,17 @@ Supports both FastAPI Microservice Mode and Direct In-Process Cloud Mode (Stream
 import asyncio
 import json
 import os
+import sys
 import time
+from pathlib import Path
 from typing import Dict, List, Optional
+
+# Ensure project root is on Python path (critical for Streamlit Cloud where
+# the working directory is the repo root but sys.path only contains frontend/)
+_PROJECT_ROOT = str(Path(__file__).resolve().parent.parent)
+if _PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, _PROJECT_ROOT)
+
 import requests
 import streamlit as st
 
@@ -30,7 +39,10 @@ try:
     from app.services.retriever import get_retriever
     from app.models.schemas import QueryRequest, ChatMessage
     IN_PROCESS_RAG_AVAILABLE = True
-except Exception:
+except Exception as _import_err:
+    import traceback
+    print(f"[FinBase] In-process RAG import failed: {_import_err}")
+    traceback.print_exc()
     IN_PROCESS_RAG_AVAILABLE = False
 
 
